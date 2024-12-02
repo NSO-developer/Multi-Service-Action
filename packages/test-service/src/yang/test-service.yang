@@ -1,0 +1,53 @@
+module test-service {
+
+  namespace "http://example.com/test-service";
+  prefix test-service;
+
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+  import multi-service-action {
+    prefix multi-service-action;
+  }
+
+  container test-services {
+    uses multi-service-action:multi-service-actions {
+      augment "re-deploy/input" {
+        leaf-list services {
+          type leafref {
+            path "/test-service:test-services/test-service:test-service/test-service:name";
+          }
+        }
+      }
+      augment "check-sync/input" {
+        leaf-list services {
+          type leafref {
+            path "/test-service:test-services/test-service:test-service/test-service:name";
+          }
+        }
+      }
+    }
+
+    list test-service {
+      key name;
+      leaf name {
+        tailf:cli-allow-range;
+        type string;
+      }
+
+      uses ncs:service-data;
+      ncs:servicepoint test-service-servicepoint;
+
+      leaf device {
+        type leafref {
+          path "/ncs:devices/ncs:device/ncs:name";
+        }
+        mandatory true;
+      }
+
+    }
+  }
+}

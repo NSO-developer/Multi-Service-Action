@@ -1,0 +1,16 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <test-services xmlns="http://example.com/test-service">
+    <test-service>
+      <name>test0</name>
+      <device>ex0</device>
+    </test-service>
+    <test-service>
+      <name>test1</name>
+      <device>ex1</device>
+    </test-service>
+    <test-service>
+      <name>my-service</name>
+      <device>ex2</device>
+    </test-service>
+  </test-services>
+</config>

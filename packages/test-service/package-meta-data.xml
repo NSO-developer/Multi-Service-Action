@@ -1,0 +1,18 @@
+<ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
+  <name>test-service</name>
+  <package-version>1.0</package-version>
+  <description>Generated Python package</description>
+  <ncs-min-version>6.3</ncs-min-version>
+
+
+  <required-package>
+    <name>multi-service-action</name>
+  </required-package>
+
+  <component>
+    <name>main</name>
+    <application>
+      <python-class-name>test_service.main.Main</python-class-name>
+    </application>
+  </component>
+</ncs-package>
