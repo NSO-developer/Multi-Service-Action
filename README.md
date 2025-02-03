@@ -10,7 +10,7 @@ Making individual calls for each item might be overly complex for the
 northbound client to manage, highlighting the need for an action that can 
 handle this scenario efficiently.
 
-The `multi-service-action` package addresses this need in a generic manner, 
+The [multi-service-action](packages/multi-service-action) package addresses this need in a generic manner, 
 enabling its use across any type of list without the need to write callback 
 code. It can be easily attached to a list by importing it into the YANG model 
 and loading the package. Although it is currently tailored for services, it 

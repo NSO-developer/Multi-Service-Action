@@ -1,7 +1,7 @@
 module multi-service-action {
   yang-version "1.1";
 
-  namespace "http://example.com/multi-service-action";
+  namespace "https://gitlab.com/nso-developer/multi-service-action";
   prefix multi-service-action;
 
   import ietf-inet-types {
